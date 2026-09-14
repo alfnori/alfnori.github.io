@@ -26,7 +26,7 @@ npm run preview  # preview produção
 ## Como editar conteúdo
 
 - **CV/experiências/skills:** `src/data/cv.ts`
-- **Projetos (6 dummies cronológicos 2025→2018):** `src/data/projects.ts` — troque `title`, `description`, `tech`, `link`, `repo`
+- **Projetos:** `src/data/projects.ts` — troque `title`, `description`, `tech`, `link`, `repo`
 - **Foto:** substitua `public/me.jpg` (e `me.jpg` na raiz como backup)
 - **PDF:** substitua `public/cv.pdf` e `Curriculo Adolfo Luiz Noriller.pdf`
 

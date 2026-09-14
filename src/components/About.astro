@@ -3,9 +3,9 @@ import { summary } from "../data/cv";
 const paragraphs = summary.split("\n\n");
 ---
 
-<section id="sobre" class="mx-auto max-w-5xl px-6 py-8">
-  <h2 class="text-sm font-semibold tracking-widest text-zinc-500 dark:text-zinc-400 uppercase">Resumo Profissional</h2>
-  <div class="mt-4 space-y-4 text-[15px] leading-7 text-zinc-700 dark:text-zinc-300">
+<section id="sobre" class="mx-auto max-w-5xl px-6 py-10">
+  <h2 class="mech-section-header">Resumo Profissional</h2>
+  <div class="mt-6 space-y-4 text-sm leading-7 text-mech-text-secondary font-body">
     {paragraphs.map((p) => <p>{p}</p>)}
   </div>
 </section>

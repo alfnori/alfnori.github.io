@@ -2,27 +2,27 @@
 import { education, languages } from "../data/cv";
 ---
 
-<section class="mx-auto max-w-5xl px-6 py-8 grid gap-8 md:grid-cols-2">
+<section class="mx-auto max-w-5xl px-6 py-10 grid gap-8 md:grid-cols-2">
   <div>
-    <h2 class="text-sm font-semibold tracking-widest text-zinc-500 dark:text-zinc-400 uppercase">Formação Acadêmica</h2>
-    <div class="mt-4 space-y-3">
+    <h2 class="mech-section-header">Formação Acadêmica</h2>
+    <div class="mt-6 space-y-3">
       {education.map((e) => (
-        <div class="rounded-2xl border border-zinc-200 p-5 bg-white dark:border-zinc-800 dark:bg-zinc-900/50">
-          <p class="font-semibold text-zinc-900 dark:text-white">{e.institution}</p>
-          <p class="text-sm text-zinc-600 dark:text-zinc-400">{e.degree}</p>
-          <p class="text-xs text-zinc-500 dark:text-zinc-500 mt-1">{e.period}</p>
+        <div class="mech-panel p-5">
+          <p class="font-display font-bold text-mech-text uppercase tracking-wide">{e.institution}</p>
+          <p class="text-sm text-mech-text-secondary mt-1">{e.degree}</p>
+          <p class="text-xs font-mono text-mech-text-muted mt-2">{e.period}</p>
         </div>
       ))}
     </div>
   </div>
 
   <div>
-    <h2 class="text-sm font-semibold tracking-widest text-zinc-500 dark:text-zinc-400 uppercase">Idiomas</h2>
-    <div class="mt-4 grid gap-3">
+    <h2 class="mech-section-header">Idiomas</h2>
+    <div class="mt-6 grid gap-3">
       {languages.map((l) => (
-        <div class="flex items-center justify-between rounded-2xl border border-zinc-200 px-5 py-4 bg-white dark:border-zinc-800 dark:bg-zinc-900/50">
-          <span class="font-medium text-zinc-900 dark:text-white">{l.name}</span>
-          <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">{l.level}</span>
+        <div class="mech-panel flex items-center justify-between px-5 py-4">
+          <span class="font-display font-semibold text-mech-text uppercase tracking-wide">{l.name}</span>
+          <span class="font-mono text-xs text-mech-cyan bg-mech-base border border-mech-border px-3 py-1 clip-mech-sm">{l.level}</span>
         </div>
       ))}
     </div>

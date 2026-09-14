@@ -2,15 +2,15 @@
 import "../styles/global.css";
 
 interface Props {
-  title?: string;
-  description?: string;
-  ogImage?: string;
+	title?: string;
+	description?: string;
+	ogImage?: string;
 }
 
 const {
-  title = "Adolfo Luiz Noriller — Engenheiro de Software Sênior",
-  description = "Engenheiro de Software Sênior com 10+ anos em APIs, microsserviços e cloud-native. Node.js, TypeScript, Java, React, AWS, Azure.",
-  ogImage = "/og-image.png",
+	title = "Adolfo Luiz Noriller — Engenheiro de Software Sênior",
+	description = "Engenheiro de Software Sênior com 10+ anos em APIs, microsserviços e cloud-native. Node.js, TypeScript, Java, React, AWS, Azure.",
+	ogImage = "/og-image.png",
 } = Astro.props;
 
 const site = "https://alfnori.github.io";
@@ -19,74 +19,96 @@ const canonical = new URL(Astro.url.pathname, site).toString();
 
 <!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <meta name="author" content="Adolfo Luiz Noriller Leite da Silva" />
-    <link rel="canonical" href={canonical} />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="author" content="Adolfo Luiz Noriller Leite da Silva" />
+		<link rel="canonical" href={canonical} />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(ogImage, site).toString()} />
-    <meta property="og:locale" content="pt_BR" />
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(ogImage, site).toString()} />
+		<meta property="og:locale" content="pt_BR" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(ogImage, site).toString()} />
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(ogImage, site).toString()} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <title>{title}</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>{title}</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+		<!-- Fonts: Rajdhani (display), Inter (body), JetBrains Mono (code) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap"
+			rel="stylesheet"
+		/>
 
-    <!-- Theme -->
-    <script is:inline>
-      const t = localStorage.getItem("theme");
-      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-        document.documentElement.classList.add("dark");
-      }
-    </script>
-
-    <!-- JSON-LD Person -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Adolfo Luiz Noriller Leite da Silva",
-      jobTitle: "Senior Software Engineer",
-      url: site,
-      image: site + "/me.jpg",
-      sameAs: [
-        "https://github.com/alfnori",
-        "https://www.linkedin.com/in/adolfo-luiz-noriller-leite-da-silva-b855b5ab"
-      ],
-      address: { "@type": "PostalAddress", addressLocality: "Curitiba", addressRegion: "PR", addressCountry: "BR" },
-      email: "mailto:alfnori@gmail.com",
-      knowsAbout: ["Node.js","TypeScript","Java","Spring Boot","React","AWS","Azure","Microservices"]
-    })} />
-
-    <style>
-      html.dark { color-scheme: dark; }
-    </style>
-  </head>
-  <body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased selection:bg-blue-500/20">
-    <slot />
-    <script is:inline>
-      // theme toggle helper exposed globally
-      window.toggleTheme = () => {
-        const isDark = document.documentElement.classList.toggle("dark");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-      };
-    </script>
-  </body>
+		<!-- Theme -->
+		<script is:inline>
+			const t = localStorage.getItem("theme");
+			if (
+				t === "dark" ||
+				(!t && window.matchMedia("(prefers-color-scheme: dark)").matches)
+			) {
+				document.documentElement.classList.add("dark");
+			}
+		</script>
+		<!-- JSON-LD Person -->
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Person",
+				name: "Adolfo Luiz Noriller Leite da Silva",
+				jobTitle: "Senior Software Engineer",
+				url: site,
+				image: site + "/me.jpg",
+				sameAs: [
+					"https://github.com/alfnori",
+					"https://www.linkedin.com/in/adolfo-luiz-noriller-leite-da-silva-b855b5ab",
+				],
+				address: {
+					"@type": "PostalAddress",
+					addressLocality: "Curitiba",
+					addressRegion: "PR",
+					addressCountry: "BR",
+				},
+				email: "mailto:alfnori@gmail.com",
+				knowsAbout: [
+					"Node.js",
+					"TypeScript",
+					"Java",
+					"Spring Boot",
+					"React",
+					"AWS",
+					"Azure",
+					"Microservices",
+				],
+			})}
+		></script>
+		<style>
+			html.dark {
+				color-scheme: dark;
+			}
+		</style>
+	</head>
+	<body class="bg-mech-base text-mech-text antialiased">
+		<slot />
+		<script is:inline>
+			window.toggleTheme = () => {
+				const isDark = document.documentElement.classList.toggle("dark");
+				localStorage.setItem("theme", isDark ? "dark" : "light");
+			};
+		</script>
+	</body>
 </html>
